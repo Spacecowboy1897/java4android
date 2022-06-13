@@ -48,6 +48,21 @@ public class ChangeableArray<T> {
        //выводим результат на экран
         System.out.println(intArray);
         System.out.println(strArray);
+        // создадим две коробки с  апельсинами, одну с яблоками и взвесим их
+        Box<Apple> appleBox = new Box<>(new Apple(), new Apple(), new Apple(),new Apple(), new Apple(),new Apple());
+        Box<Orange> orangeBox = new Box<>(new Orange());
+        Box<Orange> secondOrangeBox = new Box<>(new Orange(),new Orange(), new Orange());
+        System.out.println("Коробка с яблоками весит " + appleBox.getWeight());
+        System.out.println("Первая коробка с апельсинами весит " + orangeBox.getWeight());
+        System.out.println("Вторая коробка с апельсинами весит " + secondOrangeBox.getWeight());
+        System.out.println();
+        System.out.println("Сравниваем вес коробок! ");
+        System.out.println("Вес коробки с яблоками и первой коробки с апельсинаами одинаковый?: " + appleBox.compare(orangeBox));
+        System.out.println("Вес коробки с яблоками и второй коробки с апельсинами одинаковый?: " + appleBox.compare(secondOrangeBox));
+        //Пересыпаем апельсины
+        orangeBox.replaceFruits(secondOrangeBox);
+        System.out.println("Вес первой коробки с апельсинами составляет " + orangeBox.getWeight());
+        System.out.println("Вес второй коробки с апельсинами составляет " + secondOrangeBox.getWeight());
     }
 
 
